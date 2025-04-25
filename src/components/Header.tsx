@@ -31,7 +31,7 @@ const Header: React.FC = () => {
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
     >
-      <div className="container border-b border-zinc-200 dark:border-zinc-800 mx-auto px-4 py-4 md:py-2 flex justify-between items-center">
+      <div className="container border-b border-zinc-200 dark:border-zinc-800 mx-auto md:px-8 px-4 py-4 md:py-2 flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <BookOpen className="h-6 w-6 text-yellow-400 dark:text-yellow-500" />
           <h1 className="text-xl sm:text-xl font-bold text-zinc-800 dark:text-white">
