@@ -178,5 +178,47 @@ export const studyNotes: StudyNote[] = [
     branch: "Computer",
     semester: 4,
     downloadUrl: "https://t.me/mumcomputer/194"
+  },
+  {
+    id: '25',
+    title: "Deep Learning",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/6803e4b009e3530013336fe4"
+  },
+  {
+    id: '26',
+    title: "Applied Data Science",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/67fea0429043de00135df67d"
+  },
+  {
+    id: '27',
+    title: "Optimization in Machine Learning",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/68052b1157049300136e6739"
+  },
+  {
+    id: '28',
+    title: "Social Media Analytics",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/67fd424c9043de00134762d7"
+  },
+  {
+    id: '29',
+    title: "Environmental Management",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/67ffefc5a92f1a001358179e"
+  },
+  {
+    id: '30',
+    title: "Project Management",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/68028c0a6c18340013686e6e"
   }
 ];
