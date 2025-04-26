@@ -220,5 +220,12 @@ export const studyNotes: StudyNote[] = [
     branch: "Computer",
     semester: 8,
     downloadUrl: "https://superprofile.bio/ps/68028c0a6c18340013686e6e"
+  },
+  {
+    id: '31',
+    title: "Data Mining & Business Intelligence",
+    branch: "Information Technology",
+    semester: 6,
+    downloadUrl: "https://superprofile.bio/ps/680d05fd828a580013e314ec"
   }
 ];
