@@ -12,7 +12,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
 
   return (
     <motion.div
-      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow h-full flex flex-col"
+      className="bg-white dark:bg-zinc-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow h-full flex flex-col"
       whileHover={{ y: -5 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -48,12 +48,12 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
                 {note.branch}
               </span>
             </div>
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-white mb-2 line-clamp-2">
+            <h3 className="text-lg font-semibold text-zinc-800 dark:text-white mb-2 line-clamp-2">
               {note.title}
             </h3>
             <div className="flex items-center mt-3">
-              <Bookmark className="w-4 h-4 text-gray-500 dark:text-gray-400 mr-1" />
-              <span className="text-sm text-gray-600 dark:text-gray-300">
+              <Bookmark className="w-4 h-4 text-zinc-500 dark:text-zinc-400 mr-1" />
+              <span className="text-sm text-zinc-600 dark:text-zinc-300">
                 Semester {note.semester}
               </span>
             </div>
@@ -79,7 +79,7 @@ const NoteCard: React.FC<NoteCardProps> = ({ note }) => {
               text-white font-medium rounded-md transition-colors duration-200"
             aria-label="Toggle video preview"
           >
-            <Youtube className="w-4 h-4" />
+            <Youtube className="w-6 h-4" />
           </button>
         )}
       </div>

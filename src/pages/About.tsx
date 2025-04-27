@@ -6,7 +6,7 @@ const About: React.FC = () => {
     <section id="about" className="py-8 pt-24 bg-background min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8 sm:mb-10">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-dark mb-4">About Private Academy</h2>
+          <h2 className="main-heading text-xl sm:text-2xl md:text-3xl font-bold text-purple-dark mb-4">About Private Academy</h2>
           <div className="w-16 sm:w-24 h-1 bg-accent mx-auto mb-4"></div>
           <p className="text-sm sm:text-base md:text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
             Our mission is to make quality educational resources accessible to all engineering students. All notes and resources are provided exclusively for <span className="text-blue-600 dark:text-blue-400 font-medium">Mumbai University students</span>.
