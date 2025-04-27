@@ -4,7 +4,7 @@ export interface StudyNote {
   downloadUrl: string;
   branch: string;
   semester: number;
-  
+  youtubeUrl?: string;
 }
 
 export type Branch = 'Computer' | 'AIML' | 'Information Technology' | 'Mechanical' | 'Chemical';
