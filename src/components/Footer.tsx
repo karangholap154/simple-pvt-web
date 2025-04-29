@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       setCurrentName((prev) =>
         prev === "Karan Gholap" ? "Madhav" : "Karan Gholap"
       );
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -45,9 +45,11 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center">
           <div className="flex items-center justify-center md:justify-start mb-4 md:mb-0">
-            <span className="text-zinc-700 dark:text-zinc-300">Made With</span>
+            <span className="text-sm text-zinc-700 dark:text-zinc-300">
+              Made With
+            </span>
             <motion.div
-              className="mx-1 text-red-500"
+              className="text-sm mx-1 text-red-500"
               animate={{
                 opacity: [0.7, 1, 0.7, 1, 0.7],
               }}
@@ -59,19 +61,19 @@ const Footer: React.FC = () => {
             >
               ❤️
             </motion.div>
-            <span className="text-zinc-700 dark:text-zinc-300">By</span>
-            <div className="relative ml-1 h-6 w-28 overflow-hidden">
+            <span className="text-sm text-zinc-700 dark:text-zinc-300">By</span>
+            <div className="relative ml-1 h-5 w-24 overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.a
                   key={currentName}
                   href="https://karangholap.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute inset-0 text-blue-600 dark:text-blue-400 font-medium whitespace-nowrap"
+                  className="text-sm absolute inset-0 text-blue-600 dark:text-blue-400 font-medium whitespace-nowrap"
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: -100, opacity: 0 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.5 }}
                 >
                   {currentName}
                 </motion.a>
