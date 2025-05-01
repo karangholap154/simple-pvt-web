@@ -6,7 +6,7 @@ export const questionPapers: QuestionPaper[] = [
     title: 'High Performance Computing',
     branch: 'Computer',
     semester: 8,
-    pdfFile: '/public/pyqs/comp/sem8/BE COMP HPC MAY 2023.pdf',
+    pdfFile: '/pyqs/comp/sem8/BE COMP HPC MAY 2023.pdf',
     date: {
       month: '-',
       year: 2023
@@ -17,7 +17,7 @@ export const questionPapers: QuestionPaper[] = [
     title: 'Deep Learning',
     branch: 'Computer',
     semester: 8,
-    pdfFile: '/public/pyqs/comp/sem8/BE COMP DL JUNE 2023.pdf',
+    pdfFile: '/pyqs/comp/sem8/BE COMP DL JUNE 2023.pdf',
     date: {
       month: 'June',
       year: 2023
