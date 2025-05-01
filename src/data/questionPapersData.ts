@@ -44,5 +44,16 @@ export const questionPapers: QuestionPaper[] = [
       month: 'December',
       year: 2022
     }
+  },
+  {
+    id: '5',
+    title: 'High Performance Computing',
+    branch: 'Computer',
+    semester: 8,
+    pdfFile: 'C:\Users\KARAN\Desktop\All PVT Website\pvtacademy-bolt\src\data\pyqs\comp\sem8\BE COMP HPC MAY 2023.pdf',
+    date: {
+      month: '-',
+      year: 2023
+    }
   }
 ];
