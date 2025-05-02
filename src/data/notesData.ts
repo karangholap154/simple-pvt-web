@@ -258,5 +258,13 @@ export const studyNotes: StudyNote[] = [
     semester: 6,
     downloadUrl: "https://superprofile.bio/ps/680d05fd828a580013e314ec",
     youtubeUrl: "https://www.youtube.com/embed/VOfts1A5KII"
+  },
+  {
+    id: '32',
+    title: "High Performance Computing",
+    branch: "Computer",
+    semester: 8,
+    downloadUrl: "https://superprofile.bio/ps/6814b4061da9920013b75302",
+    youtubeUrl: "https://www.youtube.com/embed/cO3Ov-KPyGs"
   }
 ];
