@@ -28,7 +28,7 @@ export const questionPapers: QuestionPaper[] = [
     title: "Fianance Management (REV-2019 ‘C’ SCHEME)",
     branch: "Computer",
     semester: 8,
-    pdfFile: "/pyqs/comp/sem8/BE COMP FM June 2023.pdf",
+    pdfFile: "/pyqs/comp/sem8/",
     date: {
       month: "June",
       year: 2023,
@@ -39,10 +39,10 @@ export const questionPapers: QuestionPaper[] = [
     title: "Fianance Management (REV-2019 ‘C’ SCHEME)",
     branch: "Computer",
     semester: 8,
-    pdfFile: "/pyqs/comp/sem8/BE COMP FM JUNE 2024.pdf",
+    pdfFile: "/pyqs/comp/sem8/BE COMP HPC MAY 2023.pdf",
     date: {
       month: "June",
       year: 2024,
     },
-  }
+  },
 ];

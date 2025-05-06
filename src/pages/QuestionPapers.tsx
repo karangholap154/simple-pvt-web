@@ -34,12 +34,18 @@ const QuestionPapers: React.FC = () => {
     return Array.from(groups.entries()).map(([title, papers]) => ({
       title,
       papers: papers.sort((a, b) => {
-        // Sort by year descending, then by month (May before December)
+        // Define the order of months
+        const monthOrder = [
+          "January", "February", "March", "April", "May", "June",
+          "July", "August", "September", "October", "November", "December"
+        ];
+    
+        // Sort by year descending, then by month order
         if (b.date.year !== a.date.year) {
           return b.date.year - a.date.year;
         }
-        return a.date.month === 'May' ? -1 : 1;
-      })
+        return monthOrder.indexOf(a.date.month) - monthOrder.indexOf(b.date.month);
+      }),
     }));
   }, [filteredPapers]);
 
