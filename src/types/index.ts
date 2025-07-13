@@ -13,6 +13,7 @@ export interface QuestionPaper {
   pdfFile: string;
   branch: string;
   semester: number;
+  subjectCode?: string;
   date: {
     month: string;
     year: number;

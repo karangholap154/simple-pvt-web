@@ -82,6 +82,21 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="flex justify-center md:justify-end space-x-4">
+            <div className="flex items-center space-x-4 mr-6">
+              <a
+                href="/privacy-policy"
+                className="text-xs text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <span className="text-zinc-400">|</span>
+              <a
+                href="/contact"
+                className="text-xs text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                Contact
+              </a>
+            </div>
             {socialLinks.map((link) => (
               <motion.a
                 key={link.name}

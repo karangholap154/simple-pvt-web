@@ -1,3 +1,12 @@
 User-agent: *
 Allow: /
+
+# Sitemap
 Sitemap: https://www.privateacademy.in/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/

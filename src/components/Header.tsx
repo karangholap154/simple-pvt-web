@@ -80,6 +80,14 @@ const Header: React.FC = () => {
             >
               About
             </Link>
+            <Link
+              to="/contact"
+              className={`text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+                location.pathname === '/contact' ? 'text-blue-600 dark:text-blue-400 font-medium' : ''
+              }`}
+            >
+              Contact
+            </Link>
           </nav>
 
           {/* Theme Toggle Button */}
@@ -134,6 +142,15 @@ const Header: React.FC = () => {
               onClick={toggleMenu}
             >
               About
+            </Link>
+            <Link
+              to="/contact"
+              className={`text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+                location.pathname === '/contact' ? 'text-blue-600 dark:text-blue-400 font-medium' : ''
+              }`}
+              onClick={toggleMenu}
+            >
+              Contact
             </Link>
           </div>
         </motion.nav>
