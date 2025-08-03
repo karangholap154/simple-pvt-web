@@ -8,6 +8,7 @@ import About from './pages/About';
 import QuestionPapers from './pages/QuestionPapers';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import NotFound from './pages/NotFound';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/question-papers" element={<QuestionPapers />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             {showMessage && (
