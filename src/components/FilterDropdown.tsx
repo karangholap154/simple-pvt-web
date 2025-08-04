@@ -27,7 +27,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             const val = e.target.value;
             onChange(val === '' ? null : (label === 'Semester' ? Number(val) : val));
           }}
-          className="block w-full pl-3 pr-10 py-2 text-base border-zinc-300 dark:border-zinc-700 
+          className="block w-full pl-3 pr-10 py-2 text-base border border-zinc-300 dark:border-zinc-700 
             bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200
             focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
             rounded-md shadow-sm appearance-none cursor-pointer"
