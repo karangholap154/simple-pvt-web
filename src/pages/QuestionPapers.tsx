@@ -313,70 +313,118 @@ const QuestionPapers: React.FC = () => {
                     </p>
                   </div>
                   <div className="overflow-x-auto">
-                    <table className="w-full">
-                      <thead>
-                        <tr className="bg-zinc-100 dark:bg-zinc-700 border-b border-zinc-200 dark:border-zinc-600">
-                          <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Branch
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Semester
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Year
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Month
-                          </th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Subject Code
-                          </th>
-                          <th className="px-6 py-3 text-right text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
-                            Download
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody className="divide-y divide-zinc-200 dark:divide-zinc-600">
-                        {papers.map((paper, paperIndex) => (
-                          <motion.tr 
-                            key={`${paper.id}-${paper.date.month}-${paper.date.year}`}
-                            className="hover:bg-zinc-50 dark:hover:bg-zinc-700/50 transition-colors"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: (groupIndex * 0.1) + (paperIndex * 0.05) }}
-                          >
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
-                              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                    <div className="hidden md:block">
+                      <table className="w-full">
+                        <thead>
+                          <tr className="bg-zinc-100 dark:bg-zinc-700 border-b border-zinc-200 dark:border-zinc-600">
+                            <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
+                              Branch
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
+                              Semester
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
+                              Year
+                            </th>
+                            <th className="px-6 py-3 text-left text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
+                              Month
+                            </th>
+                            <th className="px-6 py-3 text-right text-xs font-medium text-zinc-500 dark:text-zinc-300 uppercase tracking-wider">
+                              Download
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-zinc-200 dark:divide-zinc-600">
+                          {papers.map((paper, paperIndex) => (
+                            <motion.tr 
+                              key={`${paper.id}-${paper.date.month}-${paper.date.year}`}
+                              className="hover:bg-zinc-50 dark:hover:bg-zinc-700/50 transition-colors"
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ delay: (groupIndex * 0.1) + (paperIndex * 0.05) }}
+                            >
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
+                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300">
+                                  {paper.branch}
+                                </span>
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
+                                Sem {paper.semester}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
+                                {paper.date.year}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
+                                {paper.date.month}
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-right">
+                                <a
+                                  href={paper.pdfFile}
+                                  download
+                                  className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 
+                                    text-white text-sm font-medium rounded-md transition-colors duration-200"
+                                >
+                                  <Download className="w-4 h-4 mr-1" />
+                                  Download
+                                </a>
+                              </td>
+                            </motion.tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* Mobile Card Layout */}
+                    <div className="md:hidden space-y-1">
+                      {papers.map((paper, paperIndex) => (
+                        <motion.div
+                          key={`${paper.id}-${paper.date.month}-${paper.date.year}`}
+                          className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 
+                            rounded-sm p-5 border border-blue-200 dark:border-blue-800 shadow-sm hover:shadow-md transition-all duration-300"
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: (groupIndex * 0.1) + (paperIndex * 0.05) }}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <div className="flex flex-col space-y-3">
+                            {/* Header with Branch Tag */}
+                            <div className="flex items-center justify-between">
+                              <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-600 text-white shadow-sm">
                                 {paper.branch}
                               </span>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
-                              Sem {paper.semester}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
-                              {paper.date.year}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
-                              {paper.date.month}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-zinc-900 dark:text-zinc-100">
-                              {paper.subjectCode || 'N/A'}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right">
-                              <a
-                                href={paper.pdfFile}
-                                download
-                                className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 
-                                  text-white text-sm font-medium rounded-md transition-colors duration-200"
-                              >
-                                <Download className="w-4 h-4 mr-1" />
-                                Download
-                              </a>
-                            </td>
-                          </motion.tr>
-                        ))}
-                      </tbody>
-                    </table>
+                              <div className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                                Sem {paper.semester}
+                              </div>
+                            </div>
+                            
+                            {/* Date Information */}
+                            <div className="flex items-center justify-center bg-white dark:bg-zinc-800 rounded-lg py-2 px-3 border border-zinc-200 dark:border-zinc-700">
+                              <div className="text-center">
+                                <div className="text-lg font-bold text-zinc-900 dark:text-white">
+                                  {paper.date.year}
+                                </div>
+                                <div className="text-xs text-zinc-500 dark:text-zinc-400 uppercase tracking-wide">
+                                  {paper.date.month}
+                                </div>
+                              </div>
+                            </div>
+                            
+                            {/* Download Button */}
+                            <a
+                              href={paper.pdfFile}
+                              download
+                              className="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 
+                                hover:from-blue-700 hover:to-indigo-700 text-white font-semibold rounded-lg transition-all duration-200 
+                                shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                            >
+                              <Download className="w-5 h-5 mr-2" />
+                              Download PDF
+                            </a>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               ))}
