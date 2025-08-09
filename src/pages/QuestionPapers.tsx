@@ -115,8 +115,8 @@ const QuestionPapers: React.FC = () => {
     <>
       <SEOHead
         title="Previous Year Question Papers | Mumbai University Engineering"
-        description="Download previous year question papers for Mumbai University engineering branches - Computer, IT, AIML, Mechanical, Chemical. Free PDF downloads for all semesters."
-        keywords="Mumbai University question papers, engineering previous year papers, computer engineering papers, IT question papers, AIML papers, mechanical engineering papers, chemical engineering papers, free download"
+        description="Download previous year question papers for Mumbai University engineering branches - Computer, IT, AIML, Mechanical, Chemical. PDF downloads for all semesters."
+        keywords="Mumbai University question papers, engineering previous year papers, computer engineering papers, IT question papers, AIML papers, mechanical engineering papers, chemical engineering papers, PDF download"
         canonicalUrl="https://www.privateacademy.in/question-papers"
         structuredData={structuredData}
       />

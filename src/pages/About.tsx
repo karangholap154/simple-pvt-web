@@ -20,8 +20,8 @@ const About: React.FC = () => {
     <>
       <SEOHead
         title="About Private Academy - Free Engineering Study Materials"
-        description="Learn about Private Academy's mission to provide free engineering study notes and question papers for Mumbai University students. Quality education accessible to all."
-        keywords="about private academy, engineering education, Mumbai University, free study materials, educational mission"
+        description="Learn about Private Academy's mission to provide engineering study notes and question papers for Mumbai University students. Quality education accessible to all."
+        keywords="about private academy, engineering education, Mumbai University, study materials, educational mission"
         canonicalUrl="https://www.privateacademy.in/about"
         structuredData={structuredData}
       />

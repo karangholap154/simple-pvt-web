@@ -114,14 +114,11 @@ const Home: React.FC = () => {
       "https://t.me/mumcomputer",
       "https://www.youtube.com/@pvtacademy"
     ],
-    "offers": {
-      "@type": "Course",
-      "name": "Engineering Study Materials",
-      "description": "Free study notes and question papers for all engineering branches",
-      "provider": {
-        "@type": "Organization",
-        "name": "Private Academy"
-      }
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN",
+      "addressRegion": "Maharashtra",
+      "addressLocality": "Mumbai"
     }
   };
 
@@ -129,8 +126,8 @@ const Home: React.FC = () => {
     <>
       <SEOHead
         title="Private Academy | Mumbai University Engineering Study Material Notes & Papers"
-        description="Free engineering study notes and previous year question papers for Mumbai University students. Browse by branch and semester - Computer, IT, AIML, Mechanical, Chemical engineering."
-        keywords="Mumbai University, engineering notes, question papers, study material, computer engineering, information technology, AIML, mechanical engineering, chemical engineering, free notes, previous year papers"
+        description="Engineering study notes and previous year question papers for Mumbai University students. Browse by branch and semester - Computer, IT, AIML, Mechanical, Chemical engineering."
+        keywords="Mumbai University, engineering notes, question papers, study material, computer engineering, information technology, AIML, mechanical engineering, chemical engineering, study notes, previous year papers"
         canonicalUrl="https://www.privateacademy.in/"
         structuredData={structuredData}
       />
@@ -150,7 +147,7 @@ const Home: React.FC = () => {
           </h1>
           <p className="text-xl text-zinc-600 dark:text-zinc-300 max-w-3xl mx-auto mb-8">
             Your one-stop destination for <span className="text-yellow-400 font-semibold">Mumbai University</span> engineering study materials. 
-            Access comprehensive notes, previous year papers, and video tutorials.
+            Access comprehensive notes, previous year papers, and video tutorials for all engineering branches.
           </p>
 
           {/* Statistics */}
