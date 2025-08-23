@@ -536,6 +536,14 @@ export const studyNotes: StudyNote[] = [
   },
   {
     id: '33',
+    title: "Internet Programming",
+    branch: "Information Technology",
+    semester: 5,
+    downloadUrl: "https://superprofile.bio/ps/68a9c8d7af6239001308b501",
+    youtubeUrl: "https://www.youtube.com/embed/zg6yNyRida8"
+  },
+  {
+    id: '34',
     title: "Data Mining & Business Intelligence",
     branch: "Information Technology",
     semester: 6,
