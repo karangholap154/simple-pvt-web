@@ -9,6 +9,7 @@ import QuestionPapers from './pages/QuestionPapers';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
+import Chatbot from './components/Chatbot';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
             )}
           </div>
           <Footer />
+          <Chatbot />
         </ThemeProvider>
       </Router>
     </HelmetProvider>
