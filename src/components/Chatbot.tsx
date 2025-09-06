@@ -12,6 +12,7 @@ interface Message {
 
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(true);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -144,7 +145,7 @@ const Chatbot: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed bottom-20 right-6 z-40 w-80 sm:w-96 h-[500px] bg-white dark:bg-zinc-800 
+            className="fixed bottom-20 right-6 z-[60] w-80 sm:w-96 h-[500px] bg-white dark:bg-zinc-800 
               rounded-xl shadow-2xl border border-zinc-200 dark:border-zinc-700 overflow-hidden flex flex-col"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -258,24 +259,60 @@ const Chatbot: React.FC = () => {
             </div>
 
             {/* Quick Action Buttons */}
-            <div className="px-4 py-2 border-t border-zinc-200 dark:border-zinc-700 flex-shrink-0">
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Show me Machine Learning materials",
-                  "How do I find Semester 6 notes?",
-                  "What subjects are in Computer Engineering?"
-                ].map((suggestion, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setInputText(suggestion)}
-                    className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 
-                      rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors flex-shrink-0"
-                  >
-                    {suggestion}
-                  </button>
-                ))}
+            <AnimatePresence>
+              {showSuggestions && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="px-4 py-2 border-t border-zinc-200 dark:border-zinc-700 flex-shrink-0"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-zinc-500 dark:text-zinc-400 font-medium">
+                      Quick suggestions:
+                    </span>
+                    <button
+                      onClick={() => setShowSuggestions(false)}
+                      className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300 
+                        px-2 py-1 rounded hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-colors"
+                    >
+                      Hide
+                    </button>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Show me Machine Learning materials",
+                      "How do I find Semester 6 notes?",
+                      "What subjects are in Computer Engineering?"
+                    ].map((suggestion, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setInputText(suggestion)}
+                        className="text-xs px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 
+                          rounded-full hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors flex-shrink-0"
+                      >
+                        {suggestion}
+                      </button>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* Show Suggestions Button (when hidden) */}
+            {!showSuggestions && (
+              <div className="px-4 py-1 border-t border-zinc-200 dark:border-zinc-700 flex-shrink-0">
+                <button
+                  onClick={() => setShowSuggestions(true)}
+                  className="text-xs text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 
+                    px-2 py-1 rounded hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors flex items-center"
+                >
+                  <Sparkles className="w-3 h-3 mr-1" />
+                  Show suggestions
+                </button>
               </div>
-            </div>
+            )}
 
             {/* Input Area */}
             <div className="border-t border-zinc-200 dark:border-zinc-700 p-4 flex-shrink-0">
@@ -306,7 +343,7 @@ const Chatbot: React.FC = () => {
                 </motion.button>
               </div>
               <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-2 text-center">
-                Powered by Google AI • Ask about study materials, subjects, or navigation
+                Powered by Google AI • Ask about study materials, subjects.
               </p>
             </div>
           </motion.div>
