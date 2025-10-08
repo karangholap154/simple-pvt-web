@@ -21,7 +21,7 @@ const PrivacyPolicy: React.FC = () => {
         title="Privacy Policy - Private Academy | Data Protection & Privacy"
         description="Learn how Private Academy collects, uses, and protects your personal information. Our commitment to your privacy and data security."
         keywords="privacy policy, data protection, personal information, cookies, Private Academy privacy"
-        canonicalUrl="https://www.privateacademy.in/privacy-policy"
+        canonicalUrl="https://privateacademy.in/privacy-policy"
         structuredData={structuredData}
       />
       
@@ -294,8 +294,14 @@ const PrivacyPolicy: React.FC = () => {
                 </p>
                 <div className="space-y-2">
                   <p><strong>Email:</strong> privateacademy.in@gmail.com</p>
-                  <p><strong>Website:</strong> www.privateacademy.in</p>
+                  <p><strong>Website:</strong> privateacademy.in</p>
                   <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
+                </div>
+                <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                  <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Google AdSense</h4>
+                  <p className="text-sm text-yellow-700 dark:text-yellow-300">
+                    This website uses Google AdSense to display advertisements. Google may use cookies and web beacons to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings.
+                  </p>
                 </div>
               </div>
             </motion.section>

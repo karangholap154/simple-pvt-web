@@ -12,12 +12,6 @@ const Sitemap: React.FC = () => {
       description: 'Browse engineering study notes by branch and semester'
     },
     {
-      title: 'Question Papers',
-      path: '/question-papers',
-      icon: <FileText className="w-5 h-5" />,
-      description: 'Access previous year question papers for Mumbai University'
-    },
-    {
       title: 'About',
       path: '/about',
       icon: <Info className="w-5 h-5" />,

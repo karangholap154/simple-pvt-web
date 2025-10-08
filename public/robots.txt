@@ -1,12 +1,35 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://www.privateacademy.in/sitemap.xml
+# Important pages
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-conditions
+Allow: /disclaimer
 
-# Crawl-delay
+# Sitemap
+Sitemap: https://privateacademy.in/sitemap.xml
+
+# Crawl-delay for better server performance
 Crawl-delay: 1
 
-# Disallow admin or private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
+# Block admin areas
+Disallow: /admin/
+Disallow: /api/
+
+# Block temporary files
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /temp/
+Disallow: /cache/
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

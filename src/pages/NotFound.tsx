@@ -21,13 +21,6 @@ const NotFound: React.FC = () => {
       color: "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
     },
     {
-      title: "Question Papers",
-      description: "Download previous year papers",
-      icon: <Search className="w-6 h-6" />,
-      path: "/question-papers",
-      color: "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
-    },
-    {
       title: "About Us",
       description: "Learn more about Private Academy",
       icon: <Home className="w-6 h-6" />,
@@ -42,7 +35,7 @@ const NotFound: React.FC = () => {
         title="Page Not Found (404) - Private Academy"
         description="The page you're looking for doesn't exist. Return to Private Academy homepage for Mumbai University engineering study materials and notes."
         keywords="404, page not found, Private Academy, engineering notes, Mumbai University"
-        canonicalUrl="https://www.privateacademy.in/404"
+        canonicalUrl="https://privateacademy.in/404"
         structuredData={structuredData}
       />
       

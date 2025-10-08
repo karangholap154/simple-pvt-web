@@ -1,23 +1,10 @@
 export interface StudyNote {
   id: string;
   title: string;
-  downloadUrl: string;
+  downloadUrl: string; // Maps to download_url in database
   branch: string;
   semester: number;
-  youtubeUrl?: string;
-}
-
-export interface QuestionPaper {
-  id: string;
-  title: string;
-  pdfFile: string;
-  branch: string;
-  semester: number;
-  subjectCode?: string;
-  date: {
-    month: string;
-    year: number;
-  };
+  youtubeUrl?: string; // Maps to youtube_url in database
 }
 
 export type Branch = 'Computer' | 'AIML' | 'Information Technology' | 'Mechanical' | 'Chemical';

@@ -4,6 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Lazy loading images */
+img {
+  loading: lazy;
+}
+
+/* AdSense container styling */
+.adsense-container {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.adsense-container ins {
+  display: block !important;
+}
+
+/* Core Web Vitals optimizations */
+.main-heading {
+  font-display: swap;
+}
+
 .main-heading {
     font-family: "Playfair Display", serif;
 }

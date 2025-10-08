@@ -19,10 +19,10 @@ const About: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="About Private Academy - Free Engineering Study Materials"
+        title="About Private Academy - Engineering Study Materials"
         description="Learn about Private Academy's mission to provide engineering study notes and question papers for Mumbai University students. Quality education accessible to all."
         keywords="about private academy, engineering education, Mumbai University, study materials, educational mission"
-        canonicalUrl="https://www.privateacademy.in/about"
+        canonicalUrl="https://privateacademy.in/about"
         structuredData={structuredData}
       />
       
@@ -32,7 +32,7 @@ const About: React.FC = () => {
             <h1 className="main-heading text-xl sm:text-2xl md:text-3xl font-bold text-purple-dark mb-4">About Private Academy</h1>
             <div className="w-16 sm:w-24 h-1 bg-accent mx-auto mb-4"></div>
             <p className="text-sm sm:text-base md:text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
-              Our mission is to make quality educational resources accessible to all engineering students. All notes and resources are provided exclusively for <span className="text-blue-600 dark:text-blue-400 font-medium">Mumbai University students</span>.
+              Our mission is to make quality educational resources accessible to all engineering students. All study materials are provided exclusively for <span className="text-blue-600 dark:text-blue-400 font-medium">Mumbai University students</span>.
             </p>
           </div>
 

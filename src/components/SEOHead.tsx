@@ -19,7 +19,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   structuredData
 }) => {
   const fullTitle = title.includes('Private Academy') ? title : `${title} | Private Academy`;
-  const baseUrl = "https://www.privateacademy.in";
+  const baseUrl = "https://privateacademy.in";
   const fullCanonicalUrl = canonicalUrl || baseUrl;
 
   return (

@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
         title="Contact Us - Private Academy | Get in Touch"
         description="Contact Private Academy for engineering study materials, support, or feedback. We're here to help Mumbai University students with their academic needs."
         keywords="contact private academy, engineering support, Mumbai University help, study materials contact, academic assistance"
-        canonicalUrl="https://www.privateacademy.in/contact"
+        canonicalUrl="https://privateacademy.in/contact"
         structuredData={structuredData}
       />
       
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
             Contact Us
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl mx-auto">
-            Have questions about our study materials? Need help with specific subjects? 
+            Have questions about our study notes? Need help with specific subjects? 
             We're here to support your academic journey.
           </p>
         </motion.section>

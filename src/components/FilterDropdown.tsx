@@ -17,7 +17,7 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 }) => {
   return (
     <div className="relative">
-      <label className="hidden md:block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-1">
+      <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
         {label}
       </label>
       <div className="relative">
@@ -27,10 +27,10 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             const val = e.target.value;
             onChange(val === '' ? null : (label === 'Semester' ? Number(val) : val));
           }}
-          className="block w-full pl-3 pr-10 py-2 text-base border border-zinc-300 dark:border-zinc-700 
-            bg-white dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200
-            focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-            rounded-md shadow-sm appearance-none cursor-pointer"
+          className="block w-full pl-4 pr-12 py-3 text-base border-2 border-zinc-200 dark:border-zinc-700 
+            bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 font-medium
+            focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:focus:border-blue-400
+            rounded-xl shadow-lg hover:shadow-xl appearance-none cursor-pointer transition-all duration-300"
         >
           <option value="">Select {label}</option>
           {options.map((option) => (
@@ -39,10 +39,9 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             </option>
           ))}
         </select>
-        <ChevronDown 
-          className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zinc-400" 
-          size={18} 
-        />
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center pointer-events-none">
+          <ChevronDown className="text-white" size={14} />
+        </div>
       </div>
     </div>
   );

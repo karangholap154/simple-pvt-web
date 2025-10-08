@@ -5,11 +5,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import QuestionPapers from './pages/QuestionPapers';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import Disclaimer from './pages/Disclaimer';
+import Admin from './pages/Admin';
 import NotFound from './pages/NotFound';
-import Chatbot from './components/Chatbot';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -52,9 +53,11 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
-                <Route path="/question-papers" element={<QuestionPapers />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms-conditions" element={<TermsConditions />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
+                <Route path="/admin" element={<Admin />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
@@ -83,7 +86,6 @@ function App() {
             )}
           </div>
           <Footer />
-          <Chatbot />
         </ThemeProvider>
       </Router>
     </HelmetProvider>
