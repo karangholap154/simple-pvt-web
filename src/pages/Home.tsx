@@ -207,7 +207,7 @@ const Home: React.FC = () => {
                   {branch.name}
                 </h3>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  {branch.count} study notes available
+                  {branch.count} study notes are available
                 </p>
               </motion.button>
             ))}
