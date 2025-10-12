@@ -311,8 +311,6 @@ const Footer: React.FC = () => {
                 University Engineering Students.
                 <a
                   href="/admin"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="ml-2 text-xs text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   Admin
