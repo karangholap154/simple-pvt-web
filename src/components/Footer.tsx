@@ -26,15 +26,16 @@ const Footer: React.FC = () => {
       url: "https://t.me/mumcomputer",
       color: "hover:text-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20",
       description: "Join 2.5K+ members",
-      gradient: "from-blue-500 to-cyan-500"
+      gradient: "from-blue-500 to-cyan-500",
     },
     {
       name: "WhatsApp",
       icon: <FaWhatsapp size={24} />,
       url: "https://chat.whatsapp.com/EYeOgxDw8qp6oRMlnTjlfI",
-      color: "hover:text-green-500 hover:bg-green-50 dark:hover:bg-green-900/20",
+      color:
+        "hover:text-green-500 hover:bg-green-50 dark:hover:bg-green-900/20",
       description: "Study group chat",
-      gradient: "from-green-500 to-emerald-500"
+      gradient: "from-green-500 to-emerald-500",
     },
     {
       name: "YouTube",
@@ -42,7 +43,7 @@ const Footer: React.FC = () => {
       url: "https://www.youtube.com/@pvtacademy",
       color: "hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20",
       description: "Video tutorials",
-      gradient: "from-red-500 to-pink-500"
+      gradient: "from-red-500 to-pink-500",
     },
     {
       name: "Instagram",
@@ -51,44 +52,53 @@ const Footer: React.FC = () => {
       color: "hover:text-pink-500 hover:bg-pink-50 dark:hover:bg-pink-900/20",
       description: "Updates & posts",
       gradient: "from-pink-500 to-purple-500",
-    }
+    },
   ];
 
   const quickLinks = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" }
+    { name: "Contact", path: "/contact" },
   ];
 
   const legalLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms & Conditions", path: "/terms-conditions" },
-    { name: "Disclaimer", path: "/disclaimer" }
+    { name: "Disclaimer", path: "/disclaimer" },
   ];
 
   const stats = [
-    { icon: <BookOpen className="w-5 h-5" />, label: "Study Notes", value: "500+" },
+    {
+      icon: <BookOpen className="w-5 h-5" />,
+      label: "Study Notes",
+      value: "500+",
+    },
     { icon: <Users className="w-5 h-5" />, label: "Students", value: "2.5K+" },
-    { icon: <Clock className="w-5 h-5" />, label: "Active Since", value: "2023" }
+    {
+      icon: <Clock className="w-5 h-5" />,
+      label: "Active Since",
+      value: "2023",
+    },
   ];
 
   return (
     <footer className="relative bg-gradient-to-br from-zinc-50 via-white to-blue-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800 border-t border-zinc-200 dark:border-zinc-700">
-      
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 dark:opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        />
       </div>
 
       <div className="relative">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-            
             {/* Brand Section */}
-            <motion.div 
+            <motion.div
               className="lg:col-span-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,10 +117,11 @@ const Footer: React.FC = () => {
                   </p>
                 </div>
               </div>
-              
+
               <p className="text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
-                Empowering Mumbai University engineering students with comprehensive study materials, 
-                important questions, and video tutorials. Quality education accessible to all.
+                Empowering Mumbai University engineering students with
+                comprehensive study materials, important questions, and video
+                tutorials. Quality education accessible to all.
               </p>
 
               {/* Stats */}
@@ -207,14 +218,11 @@ const Footer: React.FC = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center p-3 rounded-xl transition-all duration-300 group ${
-                        social.disabled 
-                          ? 'opacity-50 cursor-not-allowed' 
-                          : `${social.color} transform hover:scale-105`
-                      }`}
-                      onClick={social.disabled ? (e) => e.preventDefault() : undefined}
+                      className={`flex items-center p-3 rounded-xl transition-all duration-300 group ${social.color} transform hover:scale-105`}
                     >
-                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 bg-gradient-to-r ${social.gradient} text-white shadow-lg group-hover:shadow-xl transition-shadow`}>
+                      <div
+                        className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 bg-gradient-to-r ${social.gradient} text-white shadow-lg group-hover:shadow-xl transition-shadow`}
+                      >
                         {social.icon}
                       </div>
                       <div>
@@ -237,7 +245,6 @@ const Footer: React.FC = () => {
         <div className="border-t border-zinc-200 dark:border-zinc-700 bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
-              
               {/* Copyright with animated names */}
               <div className="flex items-center justify-center md:justify-start">
                 <span className="text-sm text-zinc-600 dark:text-zinc-400">
@@ -247,17 +254,19 @@ const Footer: React.FC = () => {
                   className="mx-2"
                   animate={{
                     scale: [1, 1.2, 1],
-                    rotate: [0, 10, -10, 0]
+                    rotate: [0, 10, -10, 0],
                   }}
                   transition={{
                     duration: 2,
                     repeat: Infinity,
-                    repeatType: "reverse"
+                    repeatType: "reverse",
                   }}
                 >
                   <Heart className="w-4 h-4 text-red-500 fill-current" />
                 </motion.div>
-                <span className="text-sm text-zinc-600 dark:text-zinc-400">by</span>
+                <span className="text-sm text-zinc-600 dark:text-zinc-400">
+                  by
+                </span>
                 <div className="relative ml-2 h-5 w-28 overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.a
@@ -281,7 +290,7 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center md:justify-end space-x-6 text-sm text-zinc-600 dark:text-zinc-400">
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <a 
+                  <a
                     href="mailto:privateacademy.in@gmail.com"
                     className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >
@@ -298,7 +307,16 @@ const Footer: React.FC = () => {
             {/* Copyright */}
             <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700 text-center">
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                © 2024 Private Academy. All rights reserved. Made for Mumbai University Engineering Students.
+                © 2024 Private Academy. All rights reserved. Made for Mumbai
+                University Engineering Students.
+                <a
+                  href="/admin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ml-2 text-xs text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                >
+                  Admin
+                </a>
               </p>
             </div>
           </div>
