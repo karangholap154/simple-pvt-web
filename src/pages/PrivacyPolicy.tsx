@@ -297,12 +297,6 @@ const PrivacyPolicy: React.FC = () => {
                   <p><strong>Website:</strong> privateacademy.in</p>
                   <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
                 </div>
-                <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                  <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Google AdSense</h4>
-                  <p className="text-sm text-yellow-700 dark:text-yellow-300">
-                    This website uses Google AdSense to display advertisements. Google may use cookies and web beacons to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings.
-                  </p>
-                </div>
               </div>
             </motion.section>
 

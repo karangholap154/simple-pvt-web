@@ -5,7 +5,6 @@ import SEOHead from '../components/SEOHead';
 import SearchBar from '../components/SearchBar';
 import FilterDropdown from '../components/FilterDropdown';
 import NotesGrid from '../components/NotesGrid';
-import AdSenseAd from '../components/AdSenseAd';
 import { NotesService } from '../services/notesService';
 import { StudyNote } from '../types';
 
@@ -663,18 +662,6 @@ const Home: React.FC = () => {
           </div>
         </section>
 
-        {/* Bottom Ad */}
-        <section className="py-8">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <AdSenseAd 
-                adSlot="5293918887"
-                adFormat="horizontal"
-                style={{ display: 'block', textAlign: 'center' }}
-              />
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
