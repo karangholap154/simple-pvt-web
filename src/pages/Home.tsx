@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BookOpen, Users, Download, Star, Search, Filter, GraduationCap, TrendingUp, Award, Zap, ArrowRight, Play, FileText, Clock, Target } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 import SEOHead from '../components/SEOHead';
 import SearchBar from '../components/SearchBar';
 import FilterDropdown from '../components/FilterDropdown';
@@ -367,7 +371,7 @@ const Home: React.FC = () => {
         {/* Hero Section with Enhanced Design */}
         <section className="relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5 dark:opacity-10">
+          <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
             <div className="absolute inset-0" style={{
               backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
             }} />
@@ -393,11 +397,11 @@ const Home: React.FC = () => {
                 </div>
                 
                 <h1 className="main-heading text-5xl sm:text-6xl lg:text-7xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent">
                     Private Academy
                   </span>
                   <br />
-                  <span className="text-2xl sm:text-3xl lg:text-4xl text-zinc-700 dark:text-zinc-300 font-medium">
+                  <span className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground font-medium">
                     Engineering Excellence Hub
                   </span>
                 </h1>
@@ -405,13 +409,13 @@ const Home: React.FC = () => {
 
               {/* Enhanced Description */}
               <motion.p
-                className="text-xl sm:text-2xl text-zinc-600 dark:text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+                className="text-xl sm:text-2xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 Transform your engineering journey with our comprehensive collection of 
-                <span className="font-semibold text-blue-600 dark:text-blue-400"> study materials</span>, 
+                <span className="font-semibold text-primary"> study materials</span>, 
                 <span className="font-semibold text-purple-600 dark:text-purple-400"> important questions</span>, and 
                 <span className="font-semibold text-pink-600 dark:text-pink-400"> video tutorials </span> 
                 designed specifically for Mumbai University students.
@@ -425,24 +429,30 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
                 {stats.map((stat, index) => (
-                  <motion.div
+                  <Card
                     key={stat.label}
-                    className={`${stat.bgColor} rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/50 dark:border-zinc-700/50`}
+                    className={cn(stat.bgColor, "transition-all duration-300 hover:shadow-lg")}
+                    asChild
+                  >
+                    <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.7 + index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -5 }}
                   >
-                    <div className={`bg-gradient-to-r ${stat.color} w-14 h-14 rounded-xl flex items-center justify-center text-white mb-4 mx-auto shadow-lg`}>
-                      {stat.icon}
-                    </div>
-                    <div className="text-3xl font-bold text-zinc-900 dark:text-white mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                      {stat.label}
-                    </div>
-                  </motion.div>
+                      <CardContent className="p-6 text-center">
+                        <div className={`bg-gradient-to-r ${stat.color} w-14 h-14 rounded-xl flex items-center justify-center text-white mb-4 mx-auto shadow-lg`}>
+                          {stat.icon}
+                        </div>
+                        <div className="text-3xl font-bold text-foreground mb-2">
+                          {stat.number}
+                        </div>
+                        <div className="text-sm font-medium text-muted-foreground">
+                          {stat.label}
+                        </div>
+                      </CardContent>
+                    </motion.div>
+                  </Card>
                 ))}
               </motion.div>
 
@@ -454,24 +464,30 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 {features.map((feature, index) => (
-                  <motion.div
+                  <Card
                     key={feature.title}
-                    className="bg-white/70 dark:bg-zinc-800/70 backdrop-blur-sm rounded-xl p-6 border border-white/50 dark:border-zinc-700/50"
+                    className="backdrop-blur-sm"
+                    asChild
+                  >
+                    <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
                     whileHover={{ scale: 1.02 }}
                   >
-                    <div className="text-blue-600 dark:text-blue-400 mb-3">
-                      {feature.icon}
-                    </div>
-                    <h3 className="font-semibold text-zinc-900 dark:text-white mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                      {feature.description}
-                    </p>
-                  </motion.div>
+                      <CardContent className="p-6">
+                        <div className="text-primary mb-3">
+                          {feature.icon}
+                        </div>
+                        <h3 className="font-semibold text-foreground mb-2">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {feature.description}
+                        </p>
+                      </CardContent>
+                    </motion.div>
+                  </Card>
                 ))}
               </motion.div>
             </motion.div>
@@ -481,24 +497,27 @@ const Home: React.FC = () => {
         {/* Enhanced Search and Filter Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <motion.div
-              className="max-w-5xl mx-auto"
+            <Card
+              className="max-w-5xl mx-auto backdrop-blur-sm"
+              asChild
+            >
+              <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/50 dark:border-zinc-700/50">
-                <div className="text-center mb-8">
+              <CardContent className="p-8">
+                <CardHeader className="text-center mb-8 p-0">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl mb-4">
                     <Search className="w-8 h-8 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-2">
+                  <CardTitle className="text-2xl mb-2">
                     Find Your Perfect Study Materials
-                  </h2>
-                  <p className="text-zinc-600 dark:text-zinc-400">
+                  </CardTitle>
+                  <CardDescription>
                     Search through our extensive collection or filter by your preferences
-                  </p>
-                </div>
+                  </CardDescription>
+                </CardHeader>
 
                 <div className="space-y-6">
                   {/* Search Bar */}
@@ -534,36 +553,44 @@ const Home: React.FC = () => {
 
                   {/* Filter Results */}
                   {hasActiveFilters && (
-                    <motion.div 
-                      className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-xl border border-blue-200 dark:border-blue-800"
+                    <Card
+                      className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800"
+                      asChild
+                    >
+                      <motion.div 
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                     >
-                      <div className="flex items-center">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                        <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
-                          {filteredNotes.length} notes found
-                        </span>
-                      </div>
-                      <button
-                        onClick={resetFilters}
-                        className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 
-                          flex items-center font-medium transition-colors"
-                      >
-                        <Filter className="w-4 h-4 mr-1" />
-                        Clear all filters
-                      </button>
-                    </motion.div>
+                        <CardContent className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 p-4">
+                          <div className="flex items-center">
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">
+                              {filteredNotes.length} notes found
+                            </span>
+                          </div>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={resetFilters}
+                            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
+                          >
+                            <Filter className="w-4 h-4 mr-1" />
+                            Clear all filters
+                          </Button>
+                        </CardContent>
+                      </motion.div>
+                    </Card>
                   )}
                 </div>
-              </div>
+              </CardContent>
             </motion.div>
+            </Card>
           </div>
         </section>
 
         {/* Enhanced Study Notes Grid */}
-        <section id="study-materials-section" className="py-20 bg-white/30 dark:bg-zinc-800/30">
+        <section id="study-materials-section" className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               {!hasActiveFilters && (
@@ -573,10 +600,10 @@ const Home: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8 }}
                 >
-                  <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-4">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
                     Complete Study Materials Collection
                   </h2>
-                  <p className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Explore our comprehensive library of engineering study materials, 
                     carefully curated for Mumbai University students
                   </p>
@@ -591,13 +618,16 @@ const Home: React.FC = () => {
         {/* Enhanced Call to Action */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <motion.div
-              className="max-w-4xl mx-auto"
+            <Card
+              className="max-w-4xl mx-auto overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white border-0"
+              asChild
+            >
+              <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white shadow-2xl">
+              <CardContent className="relative p-12">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <div className="absolute inset-0" style={{
@@ -614,35 +644,48 @@ const Home: React.FC = () => {
                     <Star className="w-10 h-10" />
                   </motion.div>
                   
-                  <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                  <CardTitle className="text-3xl sm:text-4xl font-bold mb-6 text-white">
                     Join Our Growing Community
-                  </h2>
+                  </CardTitle>
                   <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
                     Connect with thousands of Mumbai University students, get instant updates on new study materials, 
                     participate in discussions, and never miss important announcements.
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a
-                      href="https://t.me/mumcomputer"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    <Button
+                      asChild
+                      variant="secondary"
+                      size="lg"
+                      className="group bg-white text-blue-600 hover:bg-blue-50"
                     >
-                      <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Join Telegram Channel
-                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                    <a
-                      href="https://www.instagram.com/privateacademy.in"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center px-8 py-4 bg-transparent border-2 border-white text-white rounded-xl font-semibold 
-                        hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+                      <a
+                        href="https://t.me/mumcomputer"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center"
+                      >
+                        <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                        Join Telegram Channel
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="group bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600"
                     >
-                      <Star className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                      Follow on Instagram
-                    </a>
+                      <a
+                        href="https://www.instagram.com/privateacademy.in"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center"
+                      >
+                        <Star className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                        Follow on Instagram
+                      </a>
+                    </Button>
                   </div>
 
                   <div className="mt-8 flex items-center justify-center space-x-8 text-blue-100">
@@ -657,8 +700,9 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </CardContent>
             </motion.div>
+            </Card>
           </div>
         </section>
 

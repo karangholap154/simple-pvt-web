@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
 
 interface FilterDropdownProps {
   label: string;
@@ -17,9 +18,9 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
 }) => {
   return (
     <div className="relative">
-      <label className="block text-sm font-semibold text-zinc-700 dark:text-zinc-300 mb-2">
+      <Label className="block text-sm font-medium mb-2">
         {label}
-      </label>
+      </Label>
       <div className="relative">
         <select
           value={value?.toString() || ''}
@@ -27,10 +28,12 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             const val = e.target.value;
             onChange(val === '' ? null : (label === 'Semester' ? Number(val) : val));
           }}
-          className="block w-full pl-4 pr-12 py-3 text-base border-2 border-zinc-200 dark:border-zinc-700 
-            bg-white/80 dark:bg-zinc-800/80 backdrop-blur-sm text-zinc-800 dark:text-zinc-200 font-medium
-            focus:outline-none focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:focus:border-blue-400
-            rounded-xl shadow-lg hover:shadow-xl appearance-none cursor-pointer transition-all duration-300"
+          className={cn(
+            "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background",
+            "file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+            "disabled:cursor-not-allowed disabled:opacity-50 appearance-none cursor-pointer pr-10"
+          )}
         >
           <option value="">Select {label}</option>
           {options.map((option) => (
@@ -39,8 +42,8 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({
             </option>
           ))}
         </select>
-        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-md flex items-center justify-center pointer-events-none">
-          <ChevronDown className="text-white" size={14} />
+        <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+          <ChevronDown className="h-4 w-4 text-muted-foreground" />
         </div>
       </div>
     </div>
