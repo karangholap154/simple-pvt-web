@@ -137,6 +137,13 @@ const Home: React.FC = () => {
     setSelectedSemester(null);
   };
 
+  const scrollToNotes = () => {
+    const notesSection = document.getElementById('study-materials-section');
+    if (notesSection) {
+      notesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const hasActiveFilters = searchTerm.trim() || selectedBranch || selectedSemester;
 
   // Enhanced statistics for the hero section
@@ -405,6 +412,24 @@ const Home: React.FC = () => {
                     Engineering Excellence Hub
                   </span>
                 </h1>
+              </motion.div>
+
+              {/* Explore Notes Button */}
+              <motion.div
+                className="mb-12"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <Button
+                  onClick={scrollToNotes}
+                  size="lg"
+                  className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                >
+                  <BookOpen className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  Explore Notes
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
               </motion.div>
 
               {/* Enhanced Description */}

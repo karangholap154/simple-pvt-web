@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaTelegram, FaWhatsapp, FaYoutube, FaInstagram } from "react-icons/fa";
-import { Heart, BookOpen, Users, Mail, MapPin, Clock } from "lucide-react";
+import { FaTelegram, FaWhatsapp, FaYoutube, FaInstagram, FaLinkedin, FaUsers } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { Heart, BookOpen, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
@@ -53,6 +54,30 @@ const Footer: React.FC = () => {
       description: "Updates & posts",
       gradient: "from-pink-500 to-purple-500",
     },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin size={24} />,
+      url: "https://www.linkedin.com/company/privateacademy/",
+      color: "hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-900/20",
+      description: "Professional network",
+      gradient: "from-blue-600 to-blue-700",
+    },
+    {
+      name: "X (Twitter)",
+      icon: <FaSquareXTwitter size={24} />,
+      url: "https://x.com/PVTAcademyEdu",
+      color: "hover:text-black hover:bg-zinc-100 dark:hover:bg-zinc-700 dark:hover:text-white",
+      description: "Latest updates",
+      gradient: "from-zinc-800 to-zinc-900",
+    },
+    {
+      name: "Peerlist",
+      icon: <FaUsers size={24} />,
+      url: "https://peerlist.io/company/privateacademy",
+      color: "hover:text-indigo-600 hover:bg-indigo-50 dark:hover:bg-indigo-900/20",
+      description: "Professional community",
+      gradient: "from-indigo-500 to-purple-600",
+    },
   ];
 
   const quickLinks = [
@@ -65,20 +90,6 @@ const Footer: React.FC = () => {
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms & Conditions", path: "/terms-conditions" },
     { name: "Disclaimer", path: "/disclaimer" },
-  ];
-
-  const stats = [
-    {
-      icon: <BookOpen className="w-5 h-5" />,
-      label: "Study Notes",
-      value: "500+",
-    },
-    { icon: <Users className="w-5 h-5" />, label: "Students", value: "2.5K+" },
-    {
-      icon: <Clock className="w-5 h-5" />,
-      label: "Active Since",
-      value: "2023",
-    },
   ];
 
   return (
@@ -96,7 +107,7 @@ const Footer: React.FC = () => {
       <div className="relative">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <motion.div
               className="lg:col-span-2"
@@ -123,30 +134,6 @@ const Footer: React.FC = () => {
                 comprehensive study materials, important questions, and video
                 tutorials. Quality education accessible to all.
               </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={stat.label}
-                    className="text-center p-3 bg-white/50 dark:bg-zinc-800/50 rounded-lg backdrop-blur-sm border border-white/50 dark:border-zinc-700/50"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-blue-600 dark:text-blue-400 mb-1 flex justify-center">
-                      {stat.icon}
-                    </div>
-                    <div className="text-lg font-bold text-zinc-900 dark:text-white">
-                      {stat.value}
-                    </div>
-                    <div className="text-xs text-zinc-600 dark:text-zinc-400">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
 
             {/* Quick Links */}
@@ -196,49 +183,49 @@ const Footer: React.FC = () => {
                 ))}
               </div>
             </motion.div>
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center">
-                <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
-                Connect With Us
-              </h4>
-              <div className="space-y-3">
-                {socialLinks.map((social, index) => (
-                  <motion.div
-                    key={social.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                  >
-                    <a
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex items-center p-3 rounded-xl transition-all duration-300 group ${social.color} transform hover:scale-105`}
-                    >
-                      <div
-                        className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 bg-gradient-to-r ${social.gradient} text-white shadow-lg group-hover:shadow-xl transition-shadow`}
-                      >
-                        {social.icon}
-                      </div>
-                      <div>
-                        <div className="font-medium text-zinc-900 dark:text-white">
-                          {social.name}
-                        </div>
-                        <div className="text-sm text-zinc-600 dark:text-zinc-400">
-                          {social.description}
-                        </div>
-                      </div>
-                    </a>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
+
+          {/* Social Links Section - Horizontal Layout */}
+          <motion.div
+            className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center justify-center">
+              <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
+              Connect With Us
+            </h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap xl:justify-center gap-3 sm:gap-4 px-2 xl:px-0">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex items-center p-2 sm:p-3 rounded-xl transition-all duration-300 group ${social.color} transform hover:scale-105 bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm border border-white/50 dark:border-zinc-700/50 w-full sm:w-auto xl:flex-shrink-0`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <div
+                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 bg-gradient-to-r ${social.gradient} text-white shadow-lg group-hover:shadow-xl transition-shadow`}
+                  >
+                    {social.icon}
+                  </div>
+                  <div className="min-w-0 flex-1 sm:flex-initial">
+                    <div className="font-medium text-zinc-900 dark:text-white text-xs sm:text-sm">
+                      {social.name}
+                    </div>
+                    <div className="text-xs text-zinc-600 dark:text-zinc-400 hidden sm:block">
+                      {social.description}
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
         </div>
 
         {/* Bottom Bar */}
@@ -307,8 +294,7 @@ const Footer: React.FC = () => {
             {/* Copyright */}
             <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700 text-center">
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                © 2024 Private Academy. All rights reserved. Made for Mumbai
-                University Engineering Students.
+                © {new Date().getFullYear()} Private Academy. All rights reserved.
                 <a
                   href="/admin"
                   className="ml-2 text-xs text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

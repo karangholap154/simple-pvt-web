@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, MessageCircle } from 'lucide-react';
-import { FaInstagram, FaTelegram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { Mail, MapPin, MessageCircle, Users } from 'lucide-react';
+import { FaInstagram, FaLinkedin, FaTelegram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
+import { FaSquareXTwitter } from 'react-icons/fa6';
 import SEOHead from '../components/SEOHead';
 
 const Contact: React.FC = () => {
@@ -54,6 +55,27 @@ const Contact: React.FC = () => {
       url: "https://www.youtube.com/@pvtacademy",
       color: "hover:text-red-500",
       description: "Subscribe for video tutorials and explanations"
+    },
+    {
+      name: "Peerlist",
+      icon: <Users className="w-8 h-8" />,
+      url: "https://peerlist.io/company/privateacademy",
+      color: "hover:text-purple-500",
+      description: "Connect with us on Peerlist"
+    },
+    {
+      name: "LinkedIn",
+      icon: <FaLinkedin size={32} />,
+      url: "https://www.linkedin.com/company/privateacademy/",
+      color: "hover:text-blue-600",
+      description: "Follow our company page for updates"
+    },
+    {
+      name: "X/Twitter",
+      icon: <FaSquareXTwitter size={32} />,
+      url: "https://x.com/PVTAcademyEdu",
+      color: "hover:text-black dark:hover:text-white",
+      description: "Follow us on X for latest news"
     }
   ];
 

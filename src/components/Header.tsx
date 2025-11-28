@@ -33,7 +33,6 @@ const Header: React.FC = () => {
 
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '#notes', label: 'Notes', isScroll: true },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' }
   ];
