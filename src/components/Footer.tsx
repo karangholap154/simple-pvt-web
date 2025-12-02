@@ -4,6 +4,10 @@ import { FaTelegram, FaWhatsapp, FaYoutube, FaInstagram, FaLinkedin, FaUsers } f
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { Heart, BookOpen, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 const Footer: React.FC = () => {
   const [currentName, setCurrentName] = useState<"Karan Gholap" | "Madhav">(
@@ -115,25 +119,28 @@ const Footer: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <BookOpen className="h-6 w-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Private Academy
-                  </h3>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                    Engineering Excellence Hub
+              <Card className="bg-gradient-to-br from-primary/5 to-purple-500/5 border-primary/20">
+                <CardContent className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                      <BookOpen className="h-6 w-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                        Private Academy
+                      </h3>
+                      <Badge variant="secondary" className="text-xs">
+                        Engineering Excellence Hub
+                      </Badge>
+                    </div>
+                  </div>
+                  <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed">
+                    Empowering Mumbai University engineering students with
+                    comprehensive study materials, important questions, and video
+                    tutorials. Quality education accessible to all.
                   </p>
-                </div>
-              </div>
-
-              <p className="text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
-                Empowering Mumbai University engineering students with
-                comprehensive study materials, important questions, and video
-                tutorials. Quality education accessible to all.
-              </p>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Quick Links */}
@@ -142,22 +149,29 @@ const Footer: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center">
-                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3"></div>
-                Quick Links
-              </h4>
-              <div className="space-y-3">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="block text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 
-                      transition-colors duration-200 hover:translate-x-1 transform"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+              <Card>
+                <CardContent className="p-6">
+                  <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mr-3"></div>
+                    Quick Links
+                  </h4>
+                  <div className="space-y-2">
+                    {quickLinks.map((link) => (
+                      <Button
+                        key={link.path}
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        className="w-full justify-start h-auto p-2 text-left"
+                      >
+                        <Link to={link.path}>
+                          {link.name}
+                        </Link>
+                      </Button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
 
             {/* Legal Links */}
@@ -166,70 +180,100 @@ const Footer: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
             >
-              <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center">
-                <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-3"></div>
-                Legal
-              </h4>
-              <div className="space-y-3">
-                {legalLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="block text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400 
-                      transition-colors duration-200 hover:translate-x-1 transform"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+              <Card>
+                <CardContent className="p-6">
+                  <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-4 flex items-center">
+                    <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mr-3"></div>
+                    Legal
+                  </h4>
+                  <div className="space-y-2">
+                    {legalLinks.map((link) => (
+                      <Button
+                        key={link.path}
+                        variant="ghost"
+                        size="sm"
+                        asChild
+                        className="w-full justify-start h-auto p-2 text-left"
+                      >
+                        <Link to={link.path}>
+                          {link.name}
+                        </Link>
+                      </Button>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
 
-          {/* Social Links Section - Horizontal Layout */}
+          {/* Social Links Section */}
           <motion.div
             className="mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-700"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center justify-center">
-              <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
-              Connect With Us
-            </h4>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap xl:justify-center gap-3 sm:gap-4 px-2 xl:px-0">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex items-center p-2 sm:p-3 rounded-xl transition-all duration-300 group ${social.color} transform hover:scale-105 bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm border border-white/50 dark:border-zinc-700/50 w-full sm:w-auto xl:flex-shrink-0`}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div
-                    className={`w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center mr-2 sm:mr-3 flex-shrink-0 bg-gradient-to-r ${social.gradient} text-white shadow-lg group-hover:shadow-xl transition-shadow`}
-                  >
-                    {social.icon}
-                  </div>
-                  <div className="min-w-0 flex-1 sm:flex-initial">
-                    <div className="font-medium text-zinc-900 dark:text-white text-xs sm:text-sm">
-                      {social.name}
-                    </div>
-                    <div className="text-xs text-zinc-600 dark:text-zinc-400 hidden sm:block">
-                      {social.description}
-                    </div>
-                  </div>
-                </motion.a>
-              ))}
-            </div>
+            <Card>
+              <CardContent className="p-6">
+                <h4 className="text-lg font-semibold text-zinc-900 dark:text-white mb-6 flex items-center justify-center">
+                  <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mr-3"></div>
+                  Connect With Us
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:flex xl:flex-wrap xl:justify-center gap-3 sm:gap-4">
+                  {socialLinks.map((social, index) => (
+                    <motion.div
+                      key={social.name}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.4 + index * 0.05 }}
+                      className="w-full sm:w-auto xl:flex-shrink-0"
+                    >
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className={cn(
+                          "w-full h-auto p-3 flex items-center justify-start space-x-3",
+                          "hover:scale-105 transition-all duration-300",
+                          "bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm",
+                          social.color
+                        )}
+                      >
+                        <a
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div
+                            className={cn(
+                              "w-8 h-8 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center flex-shrink-0",
+                              "bg-gradient-to-r text-white shadow-lg group-hover:shadow-xl transition-shadow",
+                              social.gradient
+                            )}
+                          >
+                            {social.icon}
+                          </div>
+                          <div className="min-w-0 flex-1 text-left">
+                            <div className="font-medium text-zinc-900 dark:text-white text-xs sm:text-sm">
+                              {social.name}
+                            </div>
+                            <div className="text-xs text-zinc-600 dark:text-zinc-400 hidden sm:block">
+                              {social.description}
+                            </div>
+                          </div>
+                        </a>
+                      </Button>
+                    </motion.div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-zinc-200 dark:border-zinc-700 bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm">
+        <Card className="rounded-none border-x-0 border-b-0 bg-white/50 dark:bg-zinc-800/50 backdrop-blur-sm">
+          <CardContent className="p-0">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col md:flex-row md:justify-between md:items-center space-y-4 md:space-y-0">
               {/* Copyright with animated names */}
@@ -256,19 +300,26 @@ const Footer: React.FC = () => {
                 </span>
                 <div className="relative ml-2 h-5 w-28 overflow-hidden">
                   <AnimatePresence mode="wait">
-                    <motion.a
+                    <Button
+                      variant="link"
+                      size="sm"
+                      asChild
+                      className="absolute inset-0 p-0 h-auto"
+                    >
+                      <motion.a
                       key={currentName}
                       href="https://admin.privateacademy.in/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="absolute inset-0 text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
+                      className="text-sm font-medium bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
                       initial={{ y: 20, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       exit={{ y: -20, opacity: 0 }}
                       transition={{ duration: 0.5 }}
-                    >
+                      >
                       {currentName}
-                    </motion.a>
+                      </motion.a>
+                    </Button>
                   </AnimatePresence>
                 </div>
               </div>
@@ -277,16 +328,22 @@ const Footer: React.FC = () => {
               <div className="flex items-center justify-center md:justify-end space-x-6 text-sm text-zinc-600 dark:text-zinc-400">
                 <div className="flex items-center">
                   <Mail className="w-4 h-4 mr-2" />
-                  <a
-                    href="mailto:privateacademy.in@gmail.com"
-                    className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  <Button
+                    variant="link"
+                    size="sm"
+                    asChild
+                    className="p-0 h-auto text-sm text-zinc-600 dark:text-zinc-400 hover:text-blue-600 dark:hover:text-blue-400"
                   >
-                    privateacademy.in@gmail.com
-                  </a>
+                    <a href="mailto:privateacademy.in@gmail.com">
+                      privateacademy.in@gmail.com
+                    </a>
+                  </Button>
                 </div>
                 <div className="hidden sm:flex items-center">
                   <MapPin className="w-4 h-4 mr-2" />
-                  <span>Mumbai, India</span>
+                  <Badge variant="outline" className="text-xs">
+                    Mumbai, India
+                  </Badge>
                 </div>
               </div>
             </div>
@@ -295,16 +352,19 @@ const Footer: React.FC = () => {
             <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700 text-center">
               <p className="text-xs text-zinc-500 dark:text-zinc-400">
                 © {new Date().getFullYear()} Private Academy. All rights reserved.
-                <a
-                  href="/admin"
-                  className="ml-2 text-xs text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                <Button
+                  variant="link"
+                  size="sm"
+                  asChild
+                  className="ml-2 p-0 h-auto text-xs text-zinc-400 dark:text-zinc-500 hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  Admin
-                </a>
+                  <a href="/admin">Admin</a>
+                </Button>
               </p>
             </div>
           </div>
-        </div>
+          </CardContent>
+        </Card>
       </div>
     </footer>
   );

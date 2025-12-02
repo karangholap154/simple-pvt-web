@@ -9,6 +9,7 @@ import SEOHead from '../components/SEOHead';
 import SearchBar from '../components/SearchBar';
 import FilterDropdown from '../components/FilterDropdown';
 import NotesGrid from '../components/NotesGrid';
+import VisitorCounter from '../components/VisitorCounter';
 import { NotesService } from '../services/notesService';
 import { StudyNote } from '../types';
 
@@ -517,6 +518,8 @@ const Home: React.FC = () => {
               </motion.div>
             </motion.div>
           </div>
+
+          {/* Visitor Counter Section */}
         </section>
 
         {/* Enhanced Search and Filter Section */}
@@ -637,6 +640,20 @@ const Home: React.FC = () => {
               
               <NotesGrid notes={filteredNotes} isFiltering={isFiltering} />
             </div>
+          </div>
+        </section>
+
+        {/* Minimal Visitor Counter */}
+        <section className="py-8 bg-muted/20">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <VisitorCounter />
+            </motion.div>
           </div>
         </section>
 
