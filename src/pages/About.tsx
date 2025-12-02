@@ -7,12 +7,22 @@ const About: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     "name": "About Private Academy",
-    "description": "Learn about Private Academy's mission to provide free engineering study materials for Mumbai University students",
+    "description": "Learn about Private Academy's mission to provide engineering study materials for Mumbai University students, founded and developed by Karan Gholap.",
     "mainEntity": {
       "@type": "EducationalOrganization",
       "name": "Private Academy",
       "foundingDate": "2023",
-      "mission": "Making quality educational resources accessible to all engineering students"
+      "mission": "Making quality educational resources accessible to all engineering students",
+      "founder": {
+        "@type": "Person",
+        "name": "Karan Gholap",
+        "jobTitle": "Founder & Developer",
+        "sameAs": [
+          "https://linkedin.com/in/karangholap",
+          "https://x.com/TheKaranGholap",
+          "https://peerlist.io/karangholap"
+        ]
+      }
     }
   };
 
@@ -63,6 +73,44 @@ const About: React.FC = () => {
               <p className="text-zinc-700 dark:text-zinc-300 text-xs sm:text-sm">
                 Our materials are neatly organized by branch and semester, making it easy for you to find exactly what you need.
               </p>
+            </div>
+          </div>
+
+          <div className="mt-8 sm:mt-10 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-700 rounded-md p-4 sm:p-6 shadow-md">
+            <h2 className="text-base sm:text-lg md:text-xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4">
+              Meet the Founder
+            </h2>
+            <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base mb-3">
+              <span className="font-semibold text-zinc-900 dark:text-white">Karan Gholap</span> is the Founder &amp; Developer of Private Academy. He created this platform to help Mumbai University engineering students access high-quality notes and question papers in one place.
+            </p>
+            <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base mb-3">
+              Outside of building Private Academy, Karan actively shares his work, projects and learnings across different platforms.
+            </p>
+            <div className="flex flex-wrap gap-2 sm:gap-3">
+              <a
+                href="https://linkedin.com/in/karangholap"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://x.com/TheKaranGholap"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-black hover:bg-zinc-900 text-white transition-colors"
+              >
+                X (Twitter)
+              </a>
+              <a
+                href="https://peerlist.io/karangholap"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
+              >
+                Peerlist
+              </a>
             </div>
           </div>
 

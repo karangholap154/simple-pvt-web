@@ -220,7 +220,7 @@ const Contact: React.FC = () => {
             </h3>
             <p className="text-zinc-700 dark:text-zinc-300 mb-4">
               If you're looking for specific notes or resources that aren't available on our website, 
-              feel free to reach out to us through any of the above channels. We're constantly expanding 
+              you can reach out to us through any of the above channels. We're constantly expanding 
               our library based on student needs.
             </p>
             <div className="flex flex-wrap justify-center gap-2 text-sm text-zinc-600 dark:text-zinc-400">
