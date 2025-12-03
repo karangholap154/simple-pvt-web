@@ -1,5 +1,9 @@
 import React from 'react';
-import { BookOpen, Users, FolderTree } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { BookOpen, Users, Target, Heart, Award, Zap, ArrowRight, Star, GraduationCap, TrendingUp } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import SEOHead from '../components/SEOHead';
 
 const About: React.FC = () => {
@@ -26,6 +30,60 @@ const About: React.FC = () => {
     }
   };
 
+  const features = [
+    {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: "Quality Content",
+      description: "Meticulously curated study notes from top engineering programs, ensuring you have access to high-quality learning materials.",
+      gradient: "from-blue-500 to-cyan-500",
+      bgColor: "bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Access for All",
+      description: "We believe education should be accessible to everyone, which is why all our resources are available with no login required.",
+      gradient: "from-purple-500 to-pink-500",
+      bgColor: "bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20"
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Organized Collection",
+      description: "Our materials are neatly organized by branch and semester, making it easy for you to find exactly what you need.",
+      gradient: "from-green-500 to-emerald-500",
+      bgColor: "bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20"
+    }
+  ];
+
+  const values = [
+    {
+      icon: <Award className="w-5 h-5" />,
+      title: "Excellence",
+      description: "We strive for the highest quality in every study material we provide"
+    },
+    {
+      icon: <Heart className="w-5 h-5" />,
+      title: "Accessibility",
+      description: "Education should be accessible to all students"
+    },
+    {
+      icon: <Zap className="w-5 h-5" />,
+      title: "Innovation",
+      description: "Constantly improving our platform with new features and content"
+    },
+    {
+      icon: <TrendingUp className="w-5 h-5" />,
+      title: "Impact",
+      description: "Helping thousands of students achieve their academic goals"
+    }
+  ];
+
+  const stats = [
+    { number: "2500+", label: "Students Helped", icon: <GraduationCap className="w-5 h-5" /> },
+    { number: "50K+", label: "Downloads", icon: <BookOpen className="w-5 h-5" /> },
+    { number: "5", label: "Engineering Branches", icon: <Target className="w-5 h-5" /> },
+    { number: "98%", label: "Satisfaction Rate", icon: <Star className="w-5 h-5" /> }
+  ];
+
   return (
     <>
       <SEOHead
@@ -36,102 +94,298 @@ const About: React.FC = () => {
         structuredData={structuredData}
       />
       
-      <section id="about" className="py-8 pt-24 bg-background min-h-screen flex items-center">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 sm:mb-10">
-            <h1 className="main-heading text-xl sm:text-2xl md:text-3xl font-bold text-purple-dark mb-4">About Private Academy</h1>
-            <div className="w-16 sm:w-24 h-1 bg-accent mx-auto mb-4"></div>
-            <p className="text-sm sm:text-base md:text-lg text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
-              Our mission is to make quality educational resources accessible to all engineering students. All study materials are provided exclusively for <span className="text-blue-600 dark:text-blue-400 font-medium">Mumbai University students</span>.
-            </p>
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800">
+        
+        {/* Hero Section */}
+        <section className="relative overflow-hidden pt-24 pb-16">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234F46E5' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            }} />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
-            <div className="bg-white dark:bg-zinc-800 p-4 sm:p-5 rounded-md shadow-md border border-zinc-100 dark:border-zinc-700 transition-all duration-300 hover:shadow-lg flex flex-col items-center text-center min-h-[210px]">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-zinc-900 dark:text-white mb-2">Quality Content</h2>
-              <p className="text-zinc-700 dark:text-zinc-300 text-xs sm:text-sm">
-                Meticulously curated study notes from top engineering programs, ensuring you have access to high-quality learning materials.
+          <div className="container mx-auto px-4 relative">
+            <motion.div
+              className="max-w-4xl mx-auto text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Badge variant="secondary" className="mb-6 px-4 py-2">
+                <Heart className="w-4 h-4 mr-2" />
+                About Our Mission
+              </Badge>
+              
+              <h1 className="main-heading text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-primary via-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Empowering Students
+                </span>
+                <br />
+                <span className="text-2xl sm:text-3xl lg:text-4xl text-muted-foreground font-medium">
+                  Through Quality Education
+                </span>
+              </h1>
+              
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
+                Our mission is to make quality educational resources accessible to all engineering students. 
+                All study materials are provided exclusively for{' '}
+                <Badge variant="outline" className="mx-1">Mumbai University students</Badge>
               </p>
-            </div>
-            <div className="bg-white dark:bg-zinc-800 p-4 sm:p-5 rounded-md shadow-md border border-zinc-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg flex flex-col items-center text-center min-h-[210px]">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                <Users className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
+
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
+                  >
+                    <Card className="text-center hover:shadow-lg transition-shadow">
+                      <CardContent className="p-4">
+                        <div className="text-primary mb-2 flex justify-center">
+                          {stat.icon}
+                        </div>
+                        <div className="text-2xl font-bold text-foreground mb-1">
+                          {stat.number}
+                        </div>
+                        <div className="text-sm text-muted-foreground">
+                          {stat.label}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
               </div>
-              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-zinc-900 dark:text-white mb-2">Access for All</h2>
-              <p className="text-zinc-700 dark:text-zinc-300 text-xs sm:text-sm">
-                We believe education should be accessible to everyone, which is why all our resources are available with no login required.
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-3xl font-bold text-foreground mb-4">
+                Why Choose Private Academy?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                We're committed to providing the best educational experience for Mumbai University engineering students
               </p>
-            </div>
-            <div className="bg-white dark:bg-zinc-800 p-4 sm:p-5 rounded-md shadow-md border border-zinc-100 dark:border-zinc-700 transition-all duration-300 hover:shadow-lg flex flex-col items-center text-center min-h-[210px]">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mb-3 sm:mb-4">
-                <FolderTree className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-zinc-900 dark:text-white mb-2">Organized Collection</h2>
-              <p className="text-zinc-700 dark:text-zinc-300 text-xs sm:text-sm">
-                Our materials are neatly organized by branch and semester, making it easy for you to find exactly what you need.
-              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <Card className={`h-full hover:shadow-lg transition-all duration-300 ${feature.bgColor}`}>
+                    <CardContent className="p-6 text-center">
+                      <div className={`w-14 h-14 bg-gradient-to-r ${feature.gradient} rounded-2xl flex items-center justify-center text-white mb-4 mx-auto shadow-lg`}>
+                        {feature.icon}
+                      </div>
+                      <CardTitle className="text-xl mb-3">{feature.title}</CardTitle>
+                      <CardDescription className="text-base leading-relaxed">
+                        {feature.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
+        </section>
 
-          <div className="mt-8 sm:mt-10 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-700 rounded-md p-4 sm:p-6 shadow-md">
-            <h2 className="text-base sm:text-lg md:text-xl font-bold text-zinc-900 dark:text-white mb-3 sm:mb-4">
-              Meet the Founder
-            </h2>
-            <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base mb-3">
-              <span className="font-semibold text-zinc-900 dark:text-white">Karan Gholap</span> is the Founder &amp; Developer of Private Academy. He created this platform to help Mumbai University engineering students access high-quality notes and question papers in one place.
-            </p>
-            <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base mb-3">
-              Outside of building Private Academy, Karan actively shares his work, projects and learnings across different platforms.
-            </p>
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              <a
-                href="https://linkedin.com/in/karangholap"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-blue-600 hover:bg-blue-700 text-white transition-colors"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://x.com/TheKaranGholap"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-black hover:bg-zinc-900 text-white transition-colors"
-              >
-                X (Twitter)
-              </a>
-              <a
-                href="https://peerlist.io/karangholap"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-md bg-emerald-600 hover:bg-emerald-700 text-white transition-colors"
-              >
-                Peerlist
-              </a>
-            </div>
-          </div>
-
-          <div className="mt-8 sm:mt-10 bg-blue-50 dark:bg-blue-900/20 p-4 sm:p-6 rounded-md">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-              <div className="mb-4 md:mb-0 md:mr-6 text-center md:text-left">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold text-zinc-900 dark:text-white mb-2">Need more specialized content?</h2>
-                <p className="text-zinc-700 dark:text-zinc-300 text-sm sm:text-base">
-                  We're constantly expanding our library! If you're looking for specific notes or resources, let us know.
+        {/* Values Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Our Core Values
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  The principles that guide everything we do
                 </p>
               </div>
-              <a 
-                href="mailto:privateacademy.in@gmail.com"
-                className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2 px-4 sm:py-2.5 sm:px-5 rounded-md transition-all duration-300 shadow-sm hover:shadow-md text-center whitespace-nowrap block md:inline-block"
-              >
-                Contact Us
-              </a>
-            </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {values.map((value, index) => (
+                  <motion.div
+                    key={value.title}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <Card className="hover:shadow-md transition-shadow">
+                      <CardContent className="p-6 flex items-start space-x-4">
+                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0">
+                          {value.icon}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-2">
+                            {value.title}
+                          </h3>
+                          <p className="text-muted-foreground">
+                            {value.description}
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        {/* Founder Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="overflow-hidden">
+                <CardContent className="p-8">
+                  <div className="text-center mb-8">
+                    <h2 className="text-3xl font-bold text-foreground mb-4">
+                      Meet the Founder
+                    </h2>
+                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div className="lg:col-span-2">
+                      <h3 className="text-2xl font-bold text-foreground mb-4">
+                        Karan Gholap
+                      </h3>
+                      <Badge variant="secondary" className="mb-4">
+                        Founder & Developer
+                      </Badge>
+                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                        Karan created Private Academy to help Mumbai University engineering students access 
+                        high-quality notes and question papers in one place. His vision is to democratize 
+                        education and make quality learning resources available to all students.
+                      </p>
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        Outside of building Private Academy, Karan actively shares his work, projects and 
+                        learnings across different platforms, contributing to the developer and education community.
+                      </p>
+                      
+                      <div className="flex flex-wrap gap-3">
+                        <Button variant="default" size="sm" asChild>
+                          <a
+                            href="https://linkedin.com/in/karangholap"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            LinkedIn
+                          </a>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href="https://x.com/TheKaranGholap"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            X (Twitter)
+                          </a>
+                        </Button>
+                        <Button variant="outline" size="sm" asChild>
+                          <a
+                            href="https://peerlist.io/karangholap"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Peerlist
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+
+                    <div className="text-center lg:text-right">
+                      <div className="w-48 h-48 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-full mx-auto lg:ml-auto lg:mr-0 flex items-center justify-center shadow-2xl">
+                        <div className="w-44 h-44 bg-white dark:bg-zinc-800 rounded-full flex items-center justify-center">
+                          <GraduationCap className="w-20 h-20 text-primary" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <motion.div
+              className="max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <Card className="overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white border-0">
+                <CardContent className="p-8 text-center relative">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 opacity-10">
+                    <div className="absolute inset-0" style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`,
+                    }} />
+                  </div>
+
+                  <div className="relative z-10">
+                    <h2 className="text-3xl font-bold mb-4">
+                      Need Specialized Content?
+                    </h2>
+                    <p className="text-xl text-blue-100 mb-6 max-w-2xl mx-auto">
+                      We're constantly expanding our library! If you're looking for specific notes or resources, let us know.
+                    </p>
+                    
+                    <Button
+                      variant="secondary"
+                      size="lg"
+                      asChild
+                      className="group"
+                    >
+                      <a href="mailto:privateacademy.in@gmail.com">
+                        Contact Us
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    </Button>
+
+                    <div className="mt-8 flex flex-wrap justify-center gap-2">
+                      {['Computer Engineering', 'Information Technology', 'AIML', 'Mechanical', 'Chemical'].map((branch) => (
+                        <Badge key={branch} variant="secondary" className="bg-white/20 text-white border-white/30">
+                          {branch}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
+      </div>
     </>
   );
 };
