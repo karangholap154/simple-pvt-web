@@ -9,24 +9,61 @@ import SEOHead from '../components/SEOHead';
 const About: React.FC = () => {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
+    "@type": ["AboutPage", "WebPage"],
     "name": "About Private Academy",
-    "description": "Learn about Private Academy's mission to provide engineering study materials for Mumbai University students, founded and developed by Karan Gholap.",
+    "description": "Learn about Private Academy's mission to provide quality engineering study materials for Mumbai University students. Founded by Karan Gholap to democratize education and help students excel in their academic journey.",
+    "url": "https://privateacademy.in/about",
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Private Academy",
+      "url": "https://privateacademy.in"
+    },
     "mainEntity": {
       "@type": "EducationalOrganization",
       "name": "Private Academy",
       "foundingDate": "2023",
-      "mission": "Making quality educational resources accessible to all engineering students",
+      "mission": "Empowering Mumbai University engineering students with comprehensive study materials, important questions, and video tutorials. Quality education accessible to all.",
+      "description": "Leading educational platform serving 2500+ Mumbai University engineering students with study materials across Computer, IT, AIML, Mechanical, and Chemical engineering branches.",
       "founder": {
         "@type": "Person",
         "name": "Karan Gholap",
         "jobTitle": "Founder & Developer",
+        "description": "Passionate educator and developer committed to making quality education accessible to all engineering students.",
         "sameAs": [
           "https://linkedin.com/in/karangholap",
           "https://x.com/TheKaranGholap",
           "https://peerlist.io/karangholap"
         ]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "privateacademy.in@gmail.com",
+        "contactType": "customer service"
       }
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://privateacademy.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://privateacademy.in/about"
+        }
+      ]
     }
   };
 
@@ -87,11 +124,21 @@ const About: React.FC = () => {
   return (
     <>
       <SEOHead
-        title="About Private Academy - Engineering Study Materials"
-        description="Learn about Private Academy's mission to provide engineering study notes and question papers for Mumbai University students. Quality education accessible to all."
-        keywords="about private academy, engineering education, Mumbai University, study materials, educational mission"
+        title="About Private Academy - Mumbai University Engineering Education Platform | Our Mission & Story"
+        description="Discover Private Academy's mission to empower 2500+ Mumbai University engineering students with quality study materials. Founded by Karan Gholap to democratize education across Computer, IT, AIML, Mechanical & Chemical engineering."
+        keywords="about Private Academy, Mumbai University engineering education, Karan Gholap founder, engineering study platform, educational mission, student empowerment, quality education, engineering resources, Mumbai University support"
         canonicalUrl="https://privateacademy.in/about"
         structuredData={structuredData}
+        breadcrumbs={[
+          { name: "Home", url: "https://privateacademy.in/" },
+          { name: "About", url: "https://privateacademy.in/about" }
+        ]}
+        articleData={{
+          publishedTime: "2024-01-15T00:00:00+00:00",
+          modifiedTime: "2024-01-15T00:00:00+00:00",
+          author: "Karan Gholap",
+          section: "About"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800">

@@ -129,30 +129,88 @@ const Contact: React.FC = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
+    "@type": ["ContactPage", "WebPage"],
     "name": "Contact Private Academy",
-    "description": "Get in touch with Private Academy for engineering study materials and support",
+    "description": "Contact Private Academy for engineering study materials support, feedback, or queries. Multiple ways to reach us including email, social media, and community channels.",
+    "url": "https://privateacademy.in/contact",
+    "inLanguage": "en-US",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Private Academy",
+      "url": "https://privateacademy.in"
+    },
     "mainEntity": {
       "@type": "Organization",
       "name": "Private Academy",
       "email": "privateacademy.in@gmail.com",
+      "url": "https://privateacademy.in",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "email": "privateacademy.in@gmail.com",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Hindi"],
+          "areaServed": "Mumbai, Maharashtra, India"
+        },
+        {
+          "@type": "ContactPoint",
+          "url": "https://t.me/mumcomputer",
+          "contactType": "customer service",
+          "name": "Telegram Community"
+        },
+        {
+          "@type": "ContactPoint",
+          "url": "https://www.instagram.com/privateacademy.in",
+          "contactType": "customer service",
+          "name": "Instagram"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN",
         "addressRegion": "Maharashtra",
         "addressLocality": "Mumbai"
-      }
+      },
+      "sameAs": [
+        "https://www.instagram.com/privateacademy.in",
+        "https://t.me/mumcomputer",
+        "https://www.youtube.com/@pvtacademy",
+        "https://chat.whatsapp.com/EYeOgxDw8qp6oRMlnTjlfI",
+        "https://www.linkedin.com/company/privateacademy/",
+        "https://x.com/PVTAcademyEdu"
+      ]
+    },
+    "breadcrumb": {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://privateacademy.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://privateacademy.in/contact"
+        }
+      ]
     }
   };
 
   return (
     <>
       <SEOHead
-        title="Contact Us - Private Academy | Get in Touch"
-        description="Contact Private Academy for engineering study materials, support, or feedback. We're here to help Mumbai University students with their academic needs."
-        keywords="contact private academy, engineering support, Mumbai University help, study materials contact, academic assistance"
+        title="Contact Private Academy - Get Help & Support | Mumbai University Engineering Resources"
+        description="Contact Private Academy for engineering study materials support, feedback, or queries. Join 2.5K+ Telegram members, email us, or connect via social media. We're here to help Mumbai University students succeed."
+        keywords="contact Private Academy, Mumbai University engineering support, study materials help, academic assistance, engineering student support, Telegram community, email support, student queries, educational help"
         canonicalUrl="https://privateacademy.in/contact"
         structuredData={structuredData}
+        breadcrumbs={[
+          { name: "Home", url: "https://privateacademy.in/" },
+          { name: "Contact", url: "https://privateacademy.in/contact" }
+        ]}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800">

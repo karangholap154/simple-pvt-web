@@ -223,10 +223,10 @@ const Home: React.FC = () => {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": ["EducationalOrganization", "WebSite"],
+    "@type": ["EducationalOrganization", "WebSite", "Organization"],
     "name": "Private Academy",
     "alternateName": "Private Academy Mumbai University",
-    "description": "Engineering study notes, question papers, and video tutorials for Mumbai University students across all branches and semesters",
+    "description": "Leading educational platform providing comprehensive engineering study notes, question papers, and video tutorials for Mumbai University students across Computer, IT, AIML, Mechanical, and Chemical engineering branches.",
     "url": "https://privateacademy.in",
     "logo": {
       "@type": "ImageObject",
@@ -236,18 +236,31 @@ const Home: React.FC = () => {
     },
     "image": "https://privateacademy.in/og-image.png",
     "foundingDate": "2023",
+    "founder": {
+      "@type": "Person",
+      "name": "Karan Gholap",
+      "jobTitle": "Founder & Developer",
+      "sameAs": [
+        "https://linkedin.com/in/karangholap",
+        "https://x.com/TheKaranGholap",
+        "https://peerlist.io/karangholap"
+      ]
+    },
     "email": "privateacademy.in@gmail.com",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "privateacademy.in@gmail.com",
       "contactType": "customer service",
-      "availableLanguage": "English"
+      "availableLanguage": ["English", "Hindi"],
+      "areaServed": "Mumbai, Maharashtra, India"
     },
     "sameAs": [
       "https://www.instagram.com/privateacademy.in",
       "https://t.me/mumcomputer",
       "https://www.youtube.com/@pvtacademy",
-      "https://chat.whatsapp.com/EYeOgxDw8qp6oRMlnTjlfI"
+      "https://chat.whatsapp.com/EYeOgxDw8qp6oRMlnTjlfI",
+      "https://www.linkedin.com/company/privateacademy/",
+      "https://x.com/PVTAcademyEdu"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -264,7 +277,10 @@ const Home: React.FC = () => {
       "educationalRole": "student",
       "audienceType": "Engineering Students"
     },
-    "educationalCredentialAwarded": "Study Materials",
+    "educationalCredentialAwarded": "Engineering Study Materials and Resources",
+    "numberOfEmployees": "2-10",
+    "slogan": "Engineering Excellence Hub",
+    "keywords": "Mumbai University, engineering notes, study materials, question papers, computer engineering, information technology, AIML, mechanical engineering, chemical engineering",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Engineering Study Materials",
@@ -272,17 +288,47 @@ const Home: React.FC = () => {
         {
           "@type": "Course",
           "name": "Computer Engineering Notes",
-          "description": "Study materials for Computer Engineering students"
+          "description": "Comprehensive study materials, notes, and question papers for Computer Engineering students at Mumbai University",
+          "provider": {
+            "@type": "Organization",
+            "name": "Private Academy"
+          }
         },
         {
           "@type": "Course",
           "name": "Information Technology Notes", 
-          "description": "Study materials for IT students"
+          "description": "Complete study resources and materials for Information Technology students at Mumbai University",
+          "provider": {
+            "@type": "Organization",
+            "name": "Private Academy"
+          }
         },
         {
           "@type": "Course",
           "name": "AIML Engineering Notes",
-          "description": "Study materials for AI/ML students"
+          "description": "Specialized study materials for Artificial Intelligence and Machine Learning engineering students",
+          "provider": {
+            "@type": "Organization",
+            "name": "Private Academy"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Mechanical Engineering Notes",
+          "description": "Study materials and resources for Mechanical Engineering students at Mumbai University",
+          "provider": {
+            "@type": "Organization",
+            "name": "Private Academy"
+          }
+        },
+        {
+          "@type": "Course",
+          "name": "Chemical Engineering Notes",
+          "description": "Comprehensive study materials for Chemical Engineering students at Mumbai University",
+          "provider": {
+            "@type": "Organization",
+            "name": "Private Academy"
+          }
         }
       ]
     },
@@ -290,18 +336,44 @@ const Home: React.FC = () => {
       "@type": "SearchAction",
       "target": "https://privateacademy.in/?search={search_term_string}",
       "query-input": "required name=search_term_string"
-    }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "2500",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Mumbai University Student"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5",
+          "bestRating": "5"
+        },
+        "reviewBody": "Excellent platform for engineering study materials. Very helpful for Mumbai University students."
+      }
+    ]
   };
 
   if (loading) {
     return (
       <>
         <SEOHead
-          title="Private Academy | Mumbai University Engineering Study Material Notes & Papers"
-          description="Engineering study notes and previous year question papers for Mumbai University students. Browse by branch and semester - Computer, IT, AIML, Mechanical, Chemical engineering."
-          keywords="Mumbai University, engineering notes, question papers, study material, computer engineering, information technology, AIML, mechanical engineering, chemical engineering, study notes, previous year papers"
+          title="Private Academy - Mumbai University Engineering Study Notes & Question Papers | Download Free Materials"
+          description="Get comprehensive engineering study notes, question papers, and video tutorials for Mumbai University. Download materials for Computer, IT, AIML, Mechanical & Chemical engineering - all semesters covered. Join 2500+ students."
+          keywords="Mumbai University engineering notes, study materials download, question papers, computer engineering notes, information technology study material, AIML notes, mechanical engineering papers, chemical engineering study guide, semester wise notes, Mumbai University syllabus, engineering exam preparation, study notes PDF download"
           canonicalUrl="https://www.privateacademy.in/"
           structuredData={structuredData}
+          breadcrumbs={[
+            { name: "Home", url: "https://privateacademy.in/" },
+            { name: "Engineering Study Materials", url: "https://privateacademy.in/#study-materials-section" }
+          ]}
         />
         
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-800">

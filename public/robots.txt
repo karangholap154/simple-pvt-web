@@ -1,35 +1,89 @@
+# Private Academy - Engineering Study Materials
+# Robots.txt for better SEO crawling
+
 User-agent: *
 Allow: /
 
-# Important pages
+# Important pages for crawling
 Allow: /about
 Allow: /contact
 Allow: /privacy-policy
 Allow: /terms-conditions
 Allow: /disclaimer
 
-# Sitemap
+# Study materials sections
+Allow: /#computer-engineering
+Allow: /#information-technology
+Allow: /#aiml-engineering
+Allow: /#mechanical-engineering
+Allow: /#chemical-engineering
+
+# Block admin areas and sensitive paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /node_modules/
+
+# Block temporary and cache files
+Disallow: /*.json$
+Disallow: /*.xml$ 
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /.env
+Disallow: /.git/
+
+# Block common bot traps
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+
+# Sitemap location
 Sitemap: https://privateacademy.in/sitemap.xml
 
 # Crawl-delay for better server performance
 Crawl-delay: 1
 
-# Block admin areas
-Disallow: /admin/
-Disallow: /api/
-
-# Block temporary files
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /temp/
-Disallow: /cache/
-
-# Allow social media crawlers
+# Allow social media crawlers for better sharing
 User-agent: facebookexternalhit
 Allow: /
+Crawl-delay: 0
 
 User-agent: Twitterbot
 Allow: /
+Crawl-delay: 0
 
 User-agent: LinkedInBot
 Allow: /
+Crawl-delay: 0
+
+User-agent: WhatsApp
+Allow: /
+Crawl-delay: 0
+
+# Google specific optimizations
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-News
+Allow: /
+Crawl-delay: 0
+
+# Bing optimizations
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
